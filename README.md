@@ -71,6 +71,13 @@ A REST API for cataloging creatures from horror, fantasy, and science fiction. B
    python manage.py runserver
    ```
 
+## Testing with Postman
+
+1. Import `postman_collection.json`
+2. Run the **Register** request to create an account
+3. Run the **Login** request, copy the `access` token from the response
+4. For authenticated requests, replace `{{token}}` in the Authorization header with your token
+
 ## API Endpoints
 
 | Method | Endpoint | Description |
@@ -85,10 +92,6 @@ A REST API for cataloging creatures from horror, fantasy, and science fiction. B
 | DELETE | /api/creatures/{id}/ | Delete a creature |
 | GET | /api/tags/ | List all tags |
 | POST | /api/tags/ | Create a tag |
-
-## Postman Collection
-
-Import `postman_collection.json` from the repo to test all endpoints directly.
 
 ## Filtering & Search
 
