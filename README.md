@@ -86,6 +86,10 @@ A REST API for cataloging creatures from horror, fantasy, and science fiction. B
 | GET | /api/tags/ | List all tags |
 | POST | /api/tags/ | Create a tag |
 
+## Postman Collection
+
+Import `postman_collection.json` from the repo to test all endpoints directly.
+
 ## Filtering & Search
 
 ```
