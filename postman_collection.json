@@ -1,0 +1,313 @@
+{
+  "info": {
+    "_postman_id": "026fdf97-19bf-4a2d-a242-8460ee4c6267",
+    "name": "Creature Archive",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "31962611"
+  },
+  "item": [
+    {
+      "name": "Register",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"username\": \"appuser\",\n    \"password\": \"pass321pass\",\n    \"email\": \"test@test.com\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://drf-creature-archive-production.up.railway.app/api/auth/register/",
+          "protocol": "https",
+          "host": [
+            "drf-creature-archive-production",
+            "up",
+            "railway",
+            "app"
+          ],
+          "path": [
+            "api",
+            "auth",
+            "register",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Login",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"username\": \"appuser\",\n    \"password\": \"pass321pass\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://drf-creature-archive-production.up.railway.app/api/auth/login/",
+          "protocol": "https",
+          "host": [
+            "drf-creature-archive-production",
+            "up",
+            "railway",
+            "app"
+          ],
+          "path": [
+            "api",
+            "auth",
+            "login",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create Tag",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "Bearer {{token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"name\": \"unorganic\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://drf-creature-archive-production.up.railway.app/api/tags/",
+          "protocol": "https",
+          "host": [
+            "drf-creature-archive-production",
+            "up",
+            "railway",
+            "app"
+          ],
+          "path": [
+            "api",
+            "tags",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create Creature",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "Bearer {{token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"name\": \"The Elder One\",\n    \"description\": \"An ancient entity of incomprehensible age, its form shifts between matter and void\",\n    \"lore\": \"It existed before the first stars were born. It will exist after the last star dies.\",\n    \"danger_level\": 5,\n    \"habitat\": \"The space between dimensions, forgotten temples\",\n    \"is_sapient\": true,\n    \"tag_ids\": [1]\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://drf-creature-archive-production.up.railway.app/api/creatures/",
+          "protocol": "https",
+          "host": [
+            "drf-creature-archive-production",
+            "up",
+            "railway",
+            "app"
+          ],
+          "path": [
+            "api",
+            "creatures",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "List Creatures - GET",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "Bearer {{token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://drf-creature-archive-production.up.railway.app/api/creatures/",
+          "protocol": "https",
+          "host": [
+            "drf-creature-archive-production",
+            "up",
+            "railway",
+            "app"
+          ],
+          "path": [
+            "api",
+            "creatures",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Creature - GET",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "Bearer {{token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://drf-creature-archive-production.up.railway.app/api/creatures/1",
+          "protocol": "https",
+          "host": [
+            "drf-creature-archive-production",
+            "up",
+            "railway",
+            "app"
+          ],
+          "path": [
+            "api",
+            "creatures",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update Creature - PUT",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "Bearer {{token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"name\": \"Deep One\",\n    \"description\": \"Amphibious humanoid creatures from the ocean depths\",\n    \"lore\": \"They worship Dagon and dream of the sunken city of Y'ha-nthlei\",\n    \"danger_level\": 3,\n    \"habitat\": \"Deep ocean, coastal caves\",\n    \"is_sapient\": true,\n    \"tag_ids\": [1]\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://drf-creature-archive-production.up.railway.app/api/creatures/2/",
+          "protocol": "https",
+          "host": [
+            "drf-creature-archive-production",
+            "up",
+            "railway",
+            "app"
+          ],
+          "path": [
+            "api",
+            "creatures",
+            "2",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Creature - DELETE",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "Bearer {{token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "https://drf-creature-archive-production.up.railway.app/api/creatures/3/",
+          "protocol": "https",
+          "host": [
+            "drf-creature-archive-production",
+            "up",
+            "railway",
+            "app"
+          ],
+          "path": [
+            "api",
+            "creatures",
+            "3",
+            ""
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
