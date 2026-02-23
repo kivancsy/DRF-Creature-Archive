@@ -75,6 +75,7 @@ A REST API for cataloging creatures from horror, fantasy, and science fiction. B
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
+| POST | /api/auth/register/ | Register a new user |
 | POST | /api/auth/login/ | Get JWT tokens |
 | POST | /api/auth/refresh/ | Refresh access token |
 | GET | /api/creatures/ | List all creatures |
