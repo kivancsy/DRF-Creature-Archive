@@ -2,6 +2,8 @@
 
 A REST API for cataloging creatures from horror, fantasy, and science fiction. Built with Django and Django REST Framework.
 
+🔗 **Live API:** https://drf-creature-archive-production.up.railway.app/api/
+
 ## Features
 
 - JWT Authentication
@@ -10,41 +12,64 @@ A REST API for cataloging creatures from horror, fantasy, and science fiction. B
 - Search by name, description, and lore
 - Object-level permissions (only owners can edit their creatures)
 - Pagination
+- PostgreSQL database
+- Dockerized
 
-## Installation
+## Running Locally
+
+### With Docker (recommended)
 
 1. Clone the repository
-```bash
-   git clone https://github.com/kivancsy/creature-archive.git
-   cd creature-archive
-```
+   ```bash
+   git clone https://github.com/kivancsy/DRF-Creature-Archive.git
+   cd DRF-Creature-Archive
+   ```
+
+2. Set up environment variables
+   ```bash
+   cp .env.example .env
+   ```
+   Then edit `.env` and fill in your values.
+
+3. Start with Docker Compose
+   ```bash
+   docker-compose up --build
+   ```
+
+### Without Docker
+
+1. Clone the repository
+   ```bash
+   git clone https://github.com/kivancsy/DRF-Creature-Archive.git
+   cd DRF-Creature-Archive
+   ```
 
 2. Create a virtual environment
-```bash
+   ```bash
    python -m venv venv
    source venv/bin/activate
-```
+   ```
 
 3. Install dependencies
-```bash
+   ```bash
    pip install -r requirements.txt
-```
+   ```
 
 4. Set up environment variables
-```bash
+   ```bash
    cp .env.example .env
-```
-   Then edit `.env` and add your own `SECRET_KEY`.
+   ```
+   Then edit `.env` and fill in your values.
 
 5. Run migrations
-```bash
+   ```bash
    python manage.py migrate
-```
+   ```
 
 6. Start the server
-```bash
+   ```bash
    python manage.py runserver
-```
+   ```
 
 ## API Endpoints
 
@@ -61,6 +86,7 @@ A REST API for cataloging creatures from horror, fantasy, and science fiction. B
 | POST | /api/tags/ | Create a tag |
 
 ## Filtering & Search
+
 ```
 GET /api/creatures/?danger_level=5
 GET /api/creatures/?is_sapient=true
